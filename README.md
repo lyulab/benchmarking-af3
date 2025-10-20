@@ -1,2 +1,2 @@
-# prospective-screening-af3
-This repository contains the code used for our paper titled "Prospective Virtual Screening with AlphaFold3"
+# benchmarking-af3
+This repository contains the code used for our paper titled "Can co-folding with AlphaFold3 replace molecular docking?"
