@@ -1,0 +1,26 @@
+{
+    "name": "ZINCoy000005UWvN",
+    "sequences": [
+        {
+            "protein": {
+                "id": "A",
+                "sequence": "APQQINDIVHRTITPLIEQQKIPGMAVAVIYQGKPYYFTWGYADIAKKQPVTQQTLFELGSVSKTFTGVLGGDAIARGEIKLSDPTTKYWPELTAKQWNGITLLHLATYTAGGLPLQVPDEVKSSSDLLRFYQNWQPAWAPGTQRLYANSSIGLFGALAVKPSGLSFEQAMQTRVFQPLKLNHTWINVPPAEEKNYAWGYREGKAVHVSPGALDAEAYGVKSTIEDMARWVQSNLKPLDINEKTLQQGIQLAQSRYWQTGDMYQGLGWEMLDWPVNPDSIINGSDNKIALAARPVKAITPPTPAVRASWVHKTGATGGFGSYVAFIPEKELGIVMLANKNYPNPARVDAAWQILNALQ"
+            }
+        },
+        {
+            "ligand": {
+                "id": "B",
+                "smiles": "CC(C)OCc1nnc([C@@H](C)NS(=O)(=O)c2cccc(Cl)c2O)s1"
+            }
+        }
+    ],
+    "modelSeeds": [
+        4,
+        9,
+        8,
+        31,
+        20
+    ],
+    "dialect": "alphafold3",
+    "version": 1
+}
