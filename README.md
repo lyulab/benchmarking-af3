@@ -4,8 +4,8 @@ This repository contains the code used for our paper titled "Benchmarking AlphaF
 ## DUDEz and LTS
 The `DUDEz` and `LTS` folers contain example templates to run Alphafold3.
 
-## logAUC calculation
-The `logAUC_calculation` folder contains pipeline to calculate logAUC.
+## Enrichment analysis
+The `logAUC_calculation` folder contains pipeline to calculate enrichment metrics like logAUC.
 
 ## Out-of-sample Analysis
 
