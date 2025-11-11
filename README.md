@@ -1,6 +1,10 @@
 # benchmarking-af3
 This repository contains the code used for our paper titled "Benchmarking AlphaFold3 for structure-based ligand discovery"
 
+## Out-of-sample Analysis
+
+### Installation
+
 The following software is needed before running our analyses:
 - APoc (Alignment of Pockets): https://sites.gatech.edu/cssb/apoc
 - DockRMSD (Ligand RMSD): https://aideepmed.com/DockRMSD
@@ -8,7 +12,7 @@ The following software is needed before running our analyses:
 
 The BioLip2 database will also need to be downloaded: https://zhanggroup.org/BioLiP
 
-This repository currently contains code to perform the out-of-sample analysis. The `out_of_sample` folder contains two subfolders: `1_preparation` and `2_analysis`. 
+The `out_of_sample` folder contains two subfolders: `1_preparation` and `2_analysis`. 
 
 In the `1_preparation` folder, there's:
 - `0_DatasetConstruction.ipynb`: this notebook can be used to process data downloaded from RCSB and cross-reference with the BioLip2 database. A CSV file can be created containing information about the protein-ligand complex with the necessary information for AlphaFold3, including but not limited to the receptor sequence and ligand SMILES.
@@ -23,3 +27,5 @@ In the `2_analysis` folder, there's:
 - `7_save_mol2_array.sh`: creates and saves ligand mol2's, to be used for ligand RMSD calculations. This script has been parallelized to perform multiple operations at once. References the extract_ligand.py file.
 - `8_run_dockrmsd.sh`: runs the DockRMSD executable and saves a txt file containing the ligand RMSD between the AF3 and reference structure.
 - `9_save_metrics.py`: saves all metrics into a CSV file.
+
+## DUDEz

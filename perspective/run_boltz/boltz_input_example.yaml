@@ -1,0 +1,14 @@
+version: 1
+sequences:
+  [
+    {
+      "protein":
+        {
+          "id": "A",
+          "sequence": "GPGGSSMGTLGARRGLEWFLGFYFLSHIPITLLMDLQGVLPRDLYPVELRNLQQWYIEEFKDPLLQTPPAWFKSFLFCELVFQLPFFPIAAYAFFKGGCKWIRTPAIIYSVHTMTTLIPILSTLLLDDFSKASHFRGQGPKTFQERLFLISVYIPYFLIPLILLLFMVRNPYYK",
+          "msa": "perspective/s2.a3m",
+        },
+    },
+    { "ligand": { "id": "B", "smiles": "C[C@@H]1CCCC[C@@H]1OCCNC(=N)NC1CC1" } },
+  ]
+properties: [{ "affinity": { "binder": "B" } }]

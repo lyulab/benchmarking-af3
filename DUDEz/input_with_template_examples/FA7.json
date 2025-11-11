@@ -1,0 +1,26 @@
+{
+    "name": "ZINC001160078534",
+    "sequences": [
+        {
+            "protein": {
+                "id": "A",
+                "sequence": "IVGGKVCPKGECPWQVLLLVNGAQLCGGTLINTIWVVSAAHCFDKIKNWRNLIAVLGEHDLSEHDGDEQSRRVAQVIIPSTYVPGTTNHDIALLRLHQPVVLTDHVVPLCLPERTFSERTLAFVRFSLVSGWGQLLDRGATALELMVLNVPRLMTQDCLQQSRKVGDSPNITEYMFCAGYSDGSKDSCKGDSGGPHATHYRGTWYLTGIVSWGQGCATVGHFGVYTRVSQYIEWLQKLMRSEPRPGVLLRAPFP"
+            }
+        },
+        {
+            "ligand": {
+                "id": "B",
+                "smiles": "Cn1cc(C(=O)NC[C@H]2OC[C@@H]3CN(C(=O)/C=C/C(=O)NCC[NH3+])CC[C@@H]32)cn1"
+            }
+        }
+    ],
+    "modelSeeds": [
+        4,
+        9,
+        8,
+        31,
+        20
+    ],
+    "dialect": "alphafold3",
+    "version": 2
+}
