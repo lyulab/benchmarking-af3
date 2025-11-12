@@ -2,7 +2,7 @@
 set -euo pipefail
 
 BASE_DIR="${1:-finished_outputs}"
-JOBS="${JOBS:-$(nproc)}"   # override with: JOBS=8 ./run_xargs.sh [BASE_DIR]
+JOBS="${JOBS:-$(nproc)}"   # override with: JOBS=8 ./7_save_mol2_array.sh [BASE_DIR]
 
 export BASE_DIR
 
