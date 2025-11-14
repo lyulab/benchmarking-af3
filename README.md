@@ -8,14 +8,14 @@ This repository contains the code and workflow used in our paper, **“Benchmark
 The `DUDEz` and `LTS` folers contain example templates to run Alphafold3.
 
 ## Enrichment analysis
-The `logAUC_calculation` folder contains pipeline to calculate enrichment metrics like logAUC.
+The `enrichment` folder contains pipeline to calculate enrichment metrics like logAUC.
 
 ## Structure Prediction on Out-of-Sample Data
 
 The `out_of_sample` folder contains the workflow used to curate a dataset for structure prediction and then calculate relevant metrics.
 
-## Perspective
-The `perspective` folder contains example to run Boltz prediction and experimental data correlation calculation.
+## Prospective
+The `prospective` folder contains example to run Boltz prediction and experimental data correlation calculation.
 
 # Citation
 
