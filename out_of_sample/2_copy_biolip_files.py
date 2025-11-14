@@ -11,18 +11,16 @@ def main():
     )
     p.add_argument(
         "-c", "--csv", required=True,
-        help="Path to CSV file (with columns: pdb_id, ligand_chain, ligand_id, receptor_chain, …)"
+        help="Path to CSV file (with columns: pdb_id, ligand_chain, ligand_id, receptor_chain, ...)"
     )
     args = p.parse_args()
 
     # PARAMETERS
     receptor_dir = Path(
-        "/lustre/fs6/lyu_lab/scratch/adavasam/"
-        "BioLip2_DB/BioLiP_updated_set/receptor"
+        "BioLiP_updated_set/receptor"
     )
     ligand_dir = Path(
-        "/lustre/fs6/lyu_lab/scratch/adavasam/"
-        "BioLip2_DB/BioLiP_updated_set/ligand"
+        "BioLiP_updated_set/ligand"
     )
     af3_root = Path.cwd() / "finished_outputs"
     no_exp_dir = af3_root.parent / "no_experimental_structures"
@@ -35,9 +33,9 @@ def main():
         sys.exit(f"Error reading CSV: {e}")
 
     for i, row in df.iterrows():
-        pdb_id         = row["pdb_id"].lower()
-        ligand_id      = row["ligand_id"]
-        ligand_chain   = row["ligand_chain"]
+        pdb_id = row["pdb_id"].lower()
+        ligand_id = row["ligand_id"]
+        ligand_chain = row["ligand_chain"]
         receptor_chain = row["receptor_chain"]
 
         subdir_name = f"{pdb_id}_{ligand_id.lower()}"
