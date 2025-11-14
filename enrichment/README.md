@@ -1,7 +1,12 @@
 # Enrichment
 
 ## Installation
-Install two conda environments `py3d` and `dock37_py27` via yaml files `./envs/dock37_py27.yml` and `./envs/dock37_py27.yml`
+Install two conda environments `py3d` and `dock37_py27` via yaml files `./envs/py3d.yml` and `./envs/dock37_py27.yml` with
+```bash
+conda env create -f ./envs/dock37_py27.yml
+conda env create -f ./envs/py3d.yml
+```
+For more information please see conda docs linked [here](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html)
 
 You need to obtain the DOCK3 license [here](https://dock.compbio.ucsf.edu/Online_Licensing/index.htm) for `plots.py` and `enrich.py` and initialize `DOCKBASE` path.
 
