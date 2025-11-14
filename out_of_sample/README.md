@@ -12,7 +12,7 @@ You will also need to download the **BioLiP2** database: 🔗 [https://zhanggrou
 
 Instructions for downloading this database using the provided Perl script are available [here](https://aideepmed.com/BioLiP/weekly.html). Note that the script retrieves both the _redundant_ and _non-redundant_ datasets, where the non-redundant set is “a subset of the redundant dataset by protein sequence clustering at 90% sequence identity” ([BioLiP website](https://aideepmed.com/BioLiP/weekly.html)). For our dataset curation, we use the full redundant dataset. Because the Perl script downloads both versions, we remove the non-redundant protein and ligand directories after download, then rename the remaining directories to `protein` and `ligand` within the automatically generated `BioLiP_updated_set` folder.
 
-Although this workflow provides an end-to-end process for dataset curation and initial benchmarking, we are unable to distribute the full dataset in this repository. Instead, we include demo CSV files and sample experimental structures organized to mirror the BioLiP directory structure.
+Although this workflow provides an end-to-end process for dataset curation and initial benchmarking, we are unable to distribute the full dataset in this repository. Instead, we include demo CSV files and sample experimental structures organized to mirror the BioLiP directory structure. We also include a sample set of AF3 outputs only containing the top-ranked mmcif files.
 
 
 ### ⚙️ Environment Setup
@@ -64,7 +64,7 @@ Saves a CSV file containing information for each protein–ligand complex, inclu
 Generates AlphaFold3 JSON input files from a CSV. Outputs are saved in the `af_input` folder.
 
 **Usage:**
-```python
+```bash
 python preparation/1_create_json_inputs.py -c preparation/af3_inputs_demo.csv -o af_input
 ```
 
@@ -79,7 +79,7 @@ Copies the corresponding experimental protein and ligand structures from BioLip 
 - Update the hardcoded paths to your BioLip directories before running if needed.
 
 **Usage:**
-```python
+```bash
 python 2_copy_biolip_files.py
 ```
 
@@ -87,7 +87,7 @@ python 2_copy_biolip_files.py
 Identifies binding pocket residues within 5 Å of the experimental ligand and maps them to the AF3 predicted structure.
 
 **Usage:**
-```python
+```bash
 python 3_find_pocket_residues.py
 ```
 
@@ -139,7 +139,7 @@ Runs **DockRMSD** to calculate ligand RMSD between predicted and reference struc
 Aggregates all computed metrics into a summary CSV file.
 
 **Usage:**
-```python
+```bash
 python 9_save_metrics.py
 ```
 
