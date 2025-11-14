@@ -34,18 +34,21 @@ conda install pandas
 
 ```
 out_of_sample/
-├── 1_preparation/
+├── preparation/
 │   ├── 0_DatasetConstruction.ipynb
 │   └── 1_create_json_inputs.py
-└── 2_analysis/
-    ├── 2_copy_biolip_files.py
-    ├── 3_find_pocket_residues.py
-    ├── 4_add_pocket.sh
-    ├── 5_run_apoc.sh
-    ├── 6_coord_transform.sh
-    ├── 7_save_mol2_array.sh
-    ├── 8_run_dockrmsd.sh
-    └── 9_save_metrics.py
+├── 2_copy_biolip_files.py
+├── 3_find_pocket_residues.py
+├── 4_add_pocket.sh
+├── 5_run_apoc.sh
+├── 6_coord_transform.sh
+├── 7_save_mol2_array.sh
+├── 8_run_dockrmsd.sh
+├── 9_save_metrics.py
+├── finished_outputs/
+└── BioLiP_updated_set/
+    ├── ligand/
+    └── receptor/
 ```
 
 
@@ -61,22 +64,22 @@ Saves a CSV file containing information for each protein–ligand complex, inclu
 Generates AlphaFold3 JSON input files from a CSV. Outputs are saved in the `af_input` folder.
 
 **Usage:**
-```bash
-python 1_create_json_inputs.py -c af3_inputs.csv
+```python
+python preparation/1_create_json_inputs.py -c preparation/af3_inputs_demo.csv -o af_input
 ```
 
 
 #### 2️⃣ Analysis
 
-> All scripts in this folder should be placed in the same directory as your AF3 output folder, renamed to `finished_outputs`.
+> Once you run AF3 and make sure all predictions ran successfully (or filter out failed ones), rename the directory containing these AF3 outputs to `finished_outputs`.
 
 ##### `2_copy_biolip_files.py`
 Copies the corresponding experimental protein and ligand structures from BioLip into the `finished_outputs` directory.
 
-- Update the hardcoded paths to your BioLip directories before running.
+- Update the hardcoded paths to your BioLip directories before running if needed.
 
 **Usage:**
-```bash
+```python
 python 2_copy_biolip_files.py
 ```
 
@@ -84,7 +87,7 @@ python 2_copy_biolip_files.py
 Identifies binding pocket residues within 5 Å of the experimental ligand and maps them to the AF3 predicted structure.
 
 **Usage:**
-```bash
+```python
 python 3_find_pocket_residues.py
 ```
 
@@ -98,6 +101,8 @@ Appends user-defined pocket selections to create a combined PDB file (used as AP
 
 ##### `5_run_apoc.sh`
 Runs the **APoc** executable for all AF3 outputs and generates alignment reports.
+
+- Update the `APOC_BIN` variable to the path to your APoc installation.
 
 **Usage:**
 ```bash
@@ -123,6 +128,8 @@ Extracts and saves ligand `.mol2` files for RMSD computation. References `extrac
 ##### `8_run_dockrmsd.sh`
 Runs **DockRMSD** to calculate ligand RMSD between predicted and reference structures.
 
+- Update the `DOCKRMSD_BIN` variable to the path to your DockRMSD installation.
+
 **Usage:**
 ```bash
 ./8_run_dockrmsd.sh
@@ -132,7 +139,7 @@ Runs **DockRMSD** to calculate ligand RMSD between predicted and reference struc
 Aggregates all computed metrics into a summary CSV file.
 
 **Usage:**
-```bash
+```python
 python 9_save_metrics.py
 ```
 
