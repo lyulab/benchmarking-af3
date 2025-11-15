@@ -10,7 +10,7 @@ def main():
         description="Copy BioLiP receptor & ligand PDBs into AF3 folders"
     )
     p.add_argument(
-        "-c", "--csv", required=True,
+        "-c", "--csv", default="preparation/af3_inputs_demo.csv",
         help="Path to CSV file (with columns: pdb_id, ligand_chain, ligand_id, receptor_chain, ...)"
     )
     args = p.parse_args()
